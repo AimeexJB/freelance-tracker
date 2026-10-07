@@ -1,0 +1,134 @@
+@use './tokens';
+@use './mixins';
+@use './patterns';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  margin: 0 0 var(--space-3);
+  color: var(--color-text);
+}
+
+p {
+  margin: 0 0 var(--space-3);
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: var(--color-primary-strong);
+}
+
+label {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+input,
+select,
+textarea {
+  @include mixins.input-base;
+}
+
+::selection {
+  background: var(--color-primary-soft);
+  color: var(--color-text);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-pill);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  padding: var(--space-5) var(--space-6);
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 640px) {
+    padding: var(--space-4);
+  }
+}
+
+.visually-hidden {
+  @include mixins.visually-hidden;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+
+  h1 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-1);
+  }
+
+  p {
+    color: var(--color-text-muted);
+    margin: 0;
+    font-size: var(--font-size-sm);
+  }
+}
+
+.empty-state {
+  @include mixins.card;
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--color-text-muted);
+
+  strong {
+    display: block;
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+    font-size: var(--font-size-md);
+  }
+}

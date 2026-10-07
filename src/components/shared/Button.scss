@@ -1,0 +1,77 @@
+@use '../../styles/mixins';
+
+.btn {
+  @include mixins.button-reset;
+  @include mixins.focus-ring;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+  white-space: nowrap;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &--sm {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+
+  &--md {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-size-base);
+  }
+
+  &--lg {
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--font-size-md);
+  }
+
+  &--primary {
+    background: var(--color-primary);
+    color: var(--color-primary-contrast);
+
+    &:hover:not(:disabled) {
+      background: var(--color-primary-strong);
+    }
+  }
+
+  &--secondary {
+    background: var(--color-surface-elevated);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+
+    &:hover:not(:disabled) {
+      background: var(--color-surface-hover);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--color-text-muted);
+    border: 1px solid transparent;
+
+    &:hover:not(:disabled) {
+      background: var(--color-surface-hover);
+      color: var(--color-text);
+    }
+  }
+
+  &--danger {
+    background: transparent;
+    color: var(--color-danger);
+    border: 1px solid rgba(221, 140, 140, 0.4);
+
+    &:hover:not(:disabled) {
+      background: rgba(221, 140, 140, 0.12);
+    }
+  }
+}

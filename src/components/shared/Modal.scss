@@ -1,0 +1,61 @@
+@use '../../styles/mixins';
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 8, 18, 0.6);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--space-6) var(--space-4);
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.modal {
+  @include mixins.card;
+  background: var(--color-surface-elevated);
+  box-shadow: var(--shadow-modal);
+  width: 100%;
+  max-width: 520px;
+  padding: var(--space-5);
+  margin: auto 0;
+
+  &--wide {
+    max-width: 800px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+
+    h2 {
+      margin: 0;
+      font-size: var(--font-size-lg);
+    }
+  }
+
+  &__close {
+    @include mixins.button-reset;
+    @include mixins.focus-ring;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+
+    &:hover {
+      color: var(--color-text);
+      background: var(--color-surface-hover);
+    }
+  }
+}
+
+.confirm-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}

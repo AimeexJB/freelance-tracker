@@ -1,0 +1,96 @@
+@use '../../styles/mixins';
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.summary-card {
+  @include mixins.card;
+  padding: var(--space-5);
+
+  span {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-2);
+  }
+
+  strong {
+    font-size: var(--font-size-xl);
+  }
+
+  &__note {
+    display: block;
+    margin-top: var(--space-2);
+    font-size: 0.75rem;
+    color: var(--color-text-faint);
+    font-weight: 400;
+  }
+
+  &--income strong {
+    color: var(--color-success);
+  }
+
+  &--expense strong {
+    color: var(--color-danger);
+  }
+
+  &--tax strong {
+    color: var(--color-warning);
+  }
+}
+
+.dashboard-charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+
+.chart-card h2 {
+  font-size: var(--font-size-md);
+}
+
+.chart-empty {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  padding: var(--space-6) 0;
+  text-align: center;
+}
+
+.tax-year-table {
+  margin-top: var(--space-4);
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+
+    h2 {
+      font-size: var(--font-size-md);
+      margin: 0;
+    }
+  }
+
+  &__hint {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    max-width: 70ch;
+  }
+
+  tfoot td {
+    font-weight: 700;
+    color: var(--color-text);
+    border-top: 2px solid var(--color-border);
+    border-bottom: none;
+  }
+
+  tr.is-current-month td {
+    background: rgba(155, 135, 245, 0.08);
+  }
+}

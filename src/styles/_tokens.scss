@@ -1,0 +1,81 @@
+:root {
+  // Backgrounds (muted plum-greys, never pure black)
+  --color-bg: #1b1726;
+  --color-bg-alt: #201b2d;
+  --color-surface: #2a2439;
+  --color-surface-hover: #332c45;
+  --color-surface-elevated: #362f4c;
+  --color-border: #3e3552;
+  --color-border-soft: #34304a;
+
+  // Text (muted off-white/lavender, never pure white)
+  --color-text: #eae6f7;
+  --color-text-muted: #ab9fc9;
+  --color-text-faint: #7c7296;
+
+  // Purple accents
+  --color-primary: #9b87f5;
+  --color-primary-strong: #b39ffc;
+  --color-primary-soft: #4d3f79;
+  --color-primary-contrast: #1b1726;
+
+  // Supporting palette (muted, harmonious with purple)
+  --color-blue: #7d9cee;
+  --color-teal: #64b6a6;
+  --color-rose: #cf90ba;
+  --color-amber: #ddb873;
+  --color-green: #86c39a;
+  --color-red: #dd8c8c;
+
+  // Semantic aliases
+  --color-success: var(--color-green);
+  --color-danger: var(--color-red);
+  --color-warning: var(--color-amber);
+  --color-info: var(--color-blue);
+
+  // Chart series
+  --chart-1: var(--color-primary);
+  --chart-2: var(--color-blue);
+  --chart-3: var(--color-teal);
+  --chart-4: var(--color-rose);
+  --chart-5: var(--color-amber);
+  --chart-6: var(--color-green);
+  --chart-7: #8f7fc0;
+  --chart-8: #6d6690;
+
+  // Spacing
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  // Radius
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  // Shadow
+  --shadow-card: 0 4px 16px rgba(10, 8, 20, 0.35);
+  --shadow-modal: 0 12px 40px rgba(6, 5, 14, 0.55);
+
+  // Typography
+  --font-sans:
+    'Segoe UI', system-ui, -apple-system, 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.9375rem;
+  --font-size-md: 1.0625rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.75rem;
+  --font-size-xxl: 2.25rem;
+
+  // Focus
+  --focus-ring: 0 0 0 3px rgba(155, 135, 245, 0.55);
+
+  // Motion
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+}

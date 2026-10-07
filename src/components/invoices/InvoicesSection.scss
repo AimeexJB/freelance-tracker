@@ -1,0 +1,57 @@
+.subsection-title {
+  font-size: var(--font-size-md);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.invoice-builder {
+  fieldset {
+    max-height: 220px;
+    overflow-y: auto;
+  }
+
+  &__entry-check {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    padding: var(--space-2) 0;
+    text-transform: none;
+    font-weight: 400;
+
+    input[type='checkbox'] {
+      width: auto;
+    }
+  }
+
+  &__manual-row {
+    display: grid;
+    grid-template-columns: 2fr 0.8fr 1fr auto;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    align-items: center;
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--color-border-soft);
+    margin-top: var(--space-3);
+
+    span {
+      color: var(--color-text-muted);
+    }
+
+    strong {
+      font-size: var(--font-size-lg);
+      color: var(--color-primary-strong);
+    }
+  }
+}
