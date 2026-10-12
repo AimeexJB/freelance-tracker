@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Personal learning notes (kept local, not in the repo)
+LEARNING.md
